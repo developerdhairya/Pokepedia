@@ -2,8 +2,16 @@ import React, {useEffect, useState} from 'react';
 import CustomAppBar from "../components/CustomAppBar";
 import axios from "axios";
 import {POKEMON_API_URL, POKEMON_IMAGE_URL} from "../config";
-import {Box, CircularProgress, Grid} from "@material-ui/core";
+import {Box, CircularProgress, Grid, makeStyles} from "@material-ui/core";
 import PokemonCard from "../components/PokemonCard";
+
+const useStyles=makeStyles(()=>({
+    pokedexContainer:{
+        textAlign:"center",
+        padding:"80px 10px 0px 10px",
+        backgroundColor:"rgb(68,68,68)",
+    },
+}));
 
 function Pokedex(props) {
     const [pokemonData, setPokemonData] = useState([]);
@@ -25,16 +33,15 @@ function Pokedex(props) {
             }
         });
     });
-
+    var style=useStyles();
     return (
         <Box>
-            <CustomAppBar/>
             <div>
                 {pokemonData !== [] ? (
-                    <Grid container spacing={2}>
+                    <Grid className={style.pokedexContainer} container spacing={2}>
                         {
                             pokemonData.map((pokemonObj) => {
-                                return <PokemonCard pokemon={pokemonObj}/>
+                                return <PokemonCard pokemon={pokemonObj} key={pokemonObj.id} />
                             })
                         }
                     </Grid>

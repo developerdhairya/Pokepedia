@@ -29,7 +29,7 @@ function PokemonCard(props) {
     const pokemon = props.pokemon;
     return (
         <Grid item xs={12} sm={2} key={pokemon.id}>
-            <Link className={useStyles().link} to={"/pokemon"+pokemon.id}>
+            <Link className={useStyles().link} to={"/pokemon/"+pokemon.id}>
                 <Card className={useStyles().Card}>
                     <CardMedia className={useStyles().CardMedia} image={pokemon["imgURL"]}> </CardMedia>
                     <CardContent className={useStyles().CardContent}>

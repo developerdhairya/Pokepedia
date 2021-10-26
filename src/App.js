@@ -9,8 +9,8 @@ function App(props) {
     return (
         <BrowserRouter>
             <CustomAppBar/>
-            <Route  component={Pokedex} path="/" />
-            <Route component={PokemonDetailsPage} path="/pokemon/:id"/>
+            <Route exact component={Pokedex} path="/" />
+            <Route exact component={PokemonDetailsPage} path="/pokemon/:id"/>
         </BrowserRouter>
     );
 }

@@ -29,7 +29,6 @@ function Pokedex(props) {
                     pokemonObjectsArray.push(pokemonObject);
                 });
                 setPokemonData(pokemonObjectsArray);
-                console.log(pokemonData);
             }
         });
     });
